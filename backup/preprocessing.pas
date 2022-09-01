@@ -12,6 +12,7 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    btnBinary: TButton;
     btnUpload: TButton;
     btnGray: TButton;
     imgSrc: TImage;
