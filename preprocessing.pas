@@ -14,6 +14,7 @@ type
   TForm1 = class(TForm)
     imgSrc: TImage;
     openDialog: TOpenDialog;
+    saveDialog: TSaveDialog;
   private
 
   public
