@@ -40,6 +40,12 @@ implementation
 
 { TForm1 }
 
+uses Windows;
+
+var
+  bmpR, bmpG, bmpB: array[0..1000, 0..1000] of byte;
+  bmpBiner: array[0..1000, 0..1000] of boolean;
+
 procedure TForm1.btnSaveClick(Sender: TObject);
 begin
   if (saveDialog.Execute) then
