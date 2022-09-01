@@ -2,10 +2,10 @@ object Form1: TForm1
   Left = 861
   Height = 586
   Top = 266
-  Width = 793
+  Width = 998
   Caption = 'Form1'
   ClientHeight = 586
-  ClientWidth = 793
+  ClientWidth = 998
   LCLVersion = '2.2.0.4'
   object imgSrc: TImage
     Left = 192
