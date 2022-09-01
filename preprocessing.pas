@@ -13,6 +13,7 @@ type
 
   TForm1 = class(TForm)
     imgSrc: TImage;
+    openDialog: TOpenDialog;
   private
 
   public
