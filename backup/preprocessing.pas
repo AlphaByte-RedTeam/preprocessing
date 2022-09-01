@@ -5,7 +5,7 @@ unit preprocessing;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
 type
 
@@ -13,7 +13,9 @@ type
 
   TForm1 = class(TForm)
     imgSrc: TImage;
+    imgSrcLabel: TLabel;
     openDialog: TOpenDialog;
+    saveDialog: TSaveDialog;
   private
 
   public
