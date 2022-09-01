@@ -13,6 +13,7 @@ type
 
   TForm1 = class(TForm)
     btnUpload: TButton;
+    btnGray: TButton;
     imgSrc: TImage;
     imgMod: TImage;
     imgSrcLabel: TLabel;

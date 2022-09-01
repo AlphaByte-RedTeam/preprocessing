@@ -62,6 +62,14 @@ object Form1: TForm1
     Caption = 'Gray'
     TabOrder = 1
   end
+  object btnBinary: TButton
+    Left = 576
+    Height = 31
+    Top = 104
+    Width = 94
+    Caption = 'Binarization'
+    TabOrder = 2
+  end
   object openDialog: TOpenDialog
     Left = 40
     Top = 600
