@@ -35,6 +35,12 @@ object Form1: TForm1
     Caption = 'Upload'
     TabOrder = 0
   end
+  object imgMod: TImage
+    Left = 200
+    Height = 262
+    Top = 320
+    Width = 283
+  end
   object openDialog: TOpenDialog
     Left = 531
     Top = 60

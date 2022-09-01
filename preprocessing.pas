@@ -14,6 +14,7 @@ type
   TForm1 = class(TForm)
     btnUpload: TButton;
     imgSrc: TImage;
+    imgMod: TImage;
     imgSrcLabel: TLabel;
     openDialog: TOpenDialog;
     saveDialog: TSaveDialog;

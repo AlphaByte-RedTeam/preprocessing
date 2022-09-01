@@ -12,6 +12,7 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
+    btnUpload: TButton;
     imgSrc: TImage;
     imgSrcLabel: TLabel;
     openDialog: TOpenDialog;
