@@ -1,102 +1,97 @@
 object Form1: TForm1
   Left = 861
-  Height = 531
+  Height = 664
   Top = 266
-  Width = 793
+  Width = 991
   Caption = 'Form1'
-  ClientHeight = 531
-  ClientWidth = 793
-  LCLVersion = '2.2.0.4'
+  ClientHeight = 664
+  ClientWidth = 991
+  DesignTimePPI = 120
+  LCLVersion = '2.2.2.0'
   object imgSrc: TImage
-    Left = 192
-    Height = 210
-    Top = 19
-    Width = 226
+    Left = 240
+    Height = 262
+    Top = 24
+    Width = 283
   end
   object imgSrcLabel: TLabel
-    Left = 13
-    Height = 30
-    Top = 45
-    Width = 134
+    Left = 16
+    Height = 37
+    Top = 56
+    Width = 161
     Caption = 'Image Source'
     Font.CharSet = ANSI_CHARSET
-    Font.Height = -22
+    Font.Height = -27
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    ParentColor = False
     ParentFont = False
   end
   object btnUpload: TButton
-    Left = 19
-    Height = 25
-    Top = 90
-    Width = 75
+    Left = 24
+    Height = 31
+    Top = 112
+    Width = 94
     Caption = 'Upload'
     TabOrder = 0
   end
   object imgMod: TImage
-    Left = 192
-    Height = 210
-    Top = 256
-    Width = 226
+    Left = 240
+    Height = 262
+    Top = 320
+    Width = 283
   end
   object imgModLabel: TLabel
-    Left = 13
-    Height = 30
-    Top = 288
-    Width = 155
+    Left = 16
+    Height = 37
+    Top = 360
+    Width = 189
     Caption = 'Image Modified'
     Font.CharSet = ANSI_CHARSET
-    Font.Height = -22
+    Font.Height = -27
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    ParentColor = False
     ParentFont = False
   end
   object btnGray: TButton
-    Left = 461
-    Height = 25
-    Top = 38
-    Width = 75
+    Left = 576
+    Height = 31
+    Top = 48
+    Width = 94
     Caption = 'Gray'
     TabOrder = 1
   end
   object btnBinary: TButton
-    Left = 461
-    Height = 25
-    Top = 83
-    Width = 75
+    Left = 576
+    Height = 31
+    Top = 104
+    Width = 94
     Caption = 'Binarization'
     TabOrder = 2
   end
   object btnSmooth: TButton
-    Left = 461
-    Height = 25
-    Top = 128
-    Width = 75
+    Left = 576
+    Height = 31
+    Top = 160
+    Width = 94
     Caption = 'Smoothing'
     TabOrder = 3
   end
   object btnSharp: TButton
-    Left = 461
-    Height = 25
-    Top = 173
-    Width = 75
+    Left = 576
+    Height = 31
+    Top = 216
+    Width = 94
     Caption = 'Sharpening'
     TabOrder = 4
   end
-  object btnSave: TButton
-    Left = 19
-    Height = 25
-    Top = 336
-    Width = 75
-    Caption = 'Save'
-    TabOrder = 5
-  end
   object openDialog: TOpenDialog
-    Left = 32
-    Top = 480
+    Left = 40
+    Top = 600
   end
   object saveDialog: TSaveDialog
-    Left = 94
-    Top = 480
+    Left = 118
+    Top = 600
   end
 end
