@@ -14,6 +14,7 @@ type
   TForm1 = class(TForm)
     btnBinary: TButton;
     btnSmooth: TButton;
+    btnSharp: TButton;
     btnUpload: TButton;
     btnGray: TButton;
     imgSrc: TImage;
