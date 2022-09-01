@@ -9,10 +9,23 @@ object Form1: TForm1
   DesignTimePPI = 120
   LCLVersion = '2.2.2.0'
   object imgSrc: TImage
-    Left = 176
+    Left = 200
     Height = 262
     Top = 24
     Width = 283
+  end
+  object imgSrcLabel: TLabel
+    Left = 16
+    Height = 37
+    Top = 56
+    Width = 161
+    Caption = 'Image Source'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -27
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
   end
   object openDialog: TOpenDialog
     Left = 531
