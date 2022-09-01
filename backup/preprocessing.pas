@@ -16,6 +16,7 @@ type
     imgSrc: TImage;
     imgMod: TImage;
     imgSrcLabel: TLabel;
+    imgModLabel: TLabel;
     openDialog: TOpenDialog;
     saveDialog: TSaveDialog;
   private

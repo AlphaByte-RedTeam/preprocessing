@@ -9,7 +9,7 @@ object Form1: TForm1
   DesignTimePPI = 120
   LCLVersion = '2.2.2.0'
   object imgSrc: TImage
-    Left = 200
+    Left = 240
     Height = 262
     Top = 24
     Width = 283
@@ -36,10 +36,23 @@ object Form1: TForm1
     TabOrder = 0
   end
   object imgMod: TImage
-    Left = 200
+    Left = 240
     Height = 262
     Top = 320
     Width = 283
+  end
+  object imgModLabel: TLabel
+    Left = 16
+    Height = 37
+    Top = 360
+    Width = 189
+    Caption = 'Image Modified'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -27
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
   end
   object openDialog: TOpenDialog
     Left = 531
