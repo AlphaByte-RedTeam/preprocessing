@@ -58,6 +58,7 @@ object Form1: TForm1
     Top = 38
     Width = 75
     Caption = 'Gray'
+    OnClick = btnGrayClick
     TabOrder = 1
   end
   object btnBinary: TButton
