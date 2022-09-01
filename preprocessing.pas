@@ -25,6 +25,7 @@ type
     openDialog: TOpenDialog;
     saveDialog: TSaveDialog;
     procedure btnSaveClick(Sender: TObject);
+    procedure btnUploadClick(Sender: TObject);
   private
 
   public
@@ -51,6 +52,25 @@ begin
   if (saveDialog.Execute) then
   begin
     imgMod.Picture.SaveToFile(saveDialog.FileName);
+  end;
+end;
+
+procedure TForm1.btnUploadClick(Sender: TObject);
+var
+  x, y: integer;
+begin
+  if (openDialog.Execute) then
+  begin
+    imgSrc.Picture.LoadFromFile(openDialog.FileName);
+    for y:=0 to imgSrc.Height-1 do
+    begin
+      for x:=0 to imgSrc.Width-1 do
+      begin
+        bmpR[x, y] := getRValue(imgSrc.Canvas.Pixels[x, y]);
+        bmpG[x, y] := getGValue(imgSrc.Canvas.Pixels[x, y]);
+        bmpB[x, y] := getBValue(imgSrc.Canvas.Pixels[x, y]);
+      end;
+    end;
   end;
 end;
 
