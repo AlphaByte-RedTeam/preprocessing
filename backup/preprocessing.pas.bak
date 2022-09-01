@@ -17,6 +17,7 @@ type
     btnSharp: TButton;
     btnUpload: TButton;
     btnGray: TButton;
+    btnSave: TButton;
     imgSrc: TImage;
     imgMod: TImage;
     imgSrcLabel: TLabel;

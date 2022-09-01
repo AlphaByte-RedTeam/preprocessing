@@ -89,6 +89,7 @@ object Form1: TForm1
     Top = 336
     Width = 75
     Caption = 'Save'
+    OnClick = btnSaveClick
     TabOrder = 5
   end
   object openDialog: TOpenDialog

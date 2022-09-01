@@ -24,6 +24,7 @@ type
     imgModLabel: TLabel;
     openDialog: TOpenDialog;
     saveDialog: TSaveDialog;
+    procedure btnSaveClick(Sender: TObject);
   private
 
   public
@@ -36,6 +37,16 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.btnSaveClick(Sender: TObject);
+begin
+  if (saveDialog.Execute) then
+  begin
+    imgMod.Picture.SaveToFile(saveDialog.FileName);
+  end;
+end;
 
 end.
 
