@@ -10,9 +10,9 @@ object Form1: TForm1
   LCLVersion = '2.2.0.1'
   object imgSrc: TImage
     Left = 192
-    Height = 250
+    Height = 200
     Top = 19
-    Width = 250
+    Width = 200
   end
   object imgSrcLabel: TLabel
     Left = 13
@@ -33,13 +33,14 @@ object Form1: TForm1
     Width = 75
     Caption = 'Upload'
     OnClick = btnUploadClick
+    ParentFont = False
     TabOrder = 0
   end
   object imgMod: TImage
     Left = 192
-    Height = 250
+    Height = 200
     Top = 304
-    Width = 250
+    Width = 200
   end
   object imgModLabel: TLabel
     Left = 13
@@ -60,6 +61,7 @@ object Form1: TForm1
     Width = 75
     Caption = 'Gray'
     OnClick = btnGrayClick
+    ParentFont = False
     TabOrder = 1
   end
   object btnBinary: TButton
@@ -69,6 +71,7 @@ object Form1: TForm1
     Width = 75
     Caption = 'Binarization'
     OnClick = btnBinaryClick
+    ParentFont = False
     TabOrder = 2
   end
   object btnSmooth: TButton
@@ -77,6 +80,8 @@ object Form1: TForm1
     Top = 128
     Width = 75
     Caption = 'Smoothing'
+    OnClick = btnSmoothClick
+    ParentFont = False
     TabOrder = 3
   end
   object btnSharp: TButton
@@ -85,6 +90,7 @@ object Form1: TForm1
     Top = 173
     Width = 75
     Caption = 'Sharpening'
+    ParentFont = False
     TabOrder = 4
   end
   object btnSave: TButton
@@ -94,6 +100,7 @@ object Form1: TForm1
     Width = 75
     Caption = 'Save'
     OnClick = btnSaveClick
+    ParentFont = False
     TabOrder = 5
   end
   object openDialog: TOpenDialog
