@@ -85,13 +85,13 @@ begin
       gray := (bmpR[x, y] + bmpG[x, y] + bmpB[x, y]) div 3;
       if (gray <= 127) then
       begin
-        bmpBiner := False;
+        bmpBiner[x,y] := False;
         imgMod.Canvas.Pixels[x, y] := RGB(0, 0, 0);
       end
 
       else
       begin
-        bmpBiner := True;
+        bmpBiner[x,y] := True;
         imgMod.Canvas.Pixels[x, y] := RGB(255, 255, 255);
       end;
     end;
