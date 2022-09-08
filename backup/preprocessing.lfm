@@ -1,12 +1,13 @@
 object Form1: TForm1
-  Left = 861
+  Left = 632
   Height = 586
-  Top = 266
-  Width = 793
+  Top = 122
+  Width = 998
   Caption = 'Form1'
   ClientHeight = 586
-  ClientWidth = 793
-  LCLVersion = '2.2.0.4'
+  ClientWidth = 998
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.1'
   object imgSrc: TImage
     Left = 192
     Height = 250
@@ -67,6 +68,7 @@ object Form1: TForm1
     Top = 83
     Width = 75
     Caption = 'Binarization'
+    OnClick = btnBinaryClick
     TabOrder = 2
   end
   object btnSmooth: TButton
