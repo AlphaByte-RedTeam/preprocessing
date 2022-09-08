@@ -39,9 +39,9 @@ object Form1: TForm1
   end
   object imgMod: TImage
     Left = 240
-    Height = 312
+    Height = 250
     Top = 380
-    Width = 312
+    Width = 250
   end
   object imgModLabel: TLabel
     Left = 16

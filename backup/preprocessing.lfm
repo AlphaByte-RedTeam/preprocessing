@@ -1,107 +1,110 @@
 object Form1: TForm1
   Left = 632
-  Height = 586
+  Height = 732
   Top = 122
-  Width = 998
+  Width = 1248
   Caption = 'Form1'
-  ClientHeight = 586
-  ClientWidth = 998
+  ClientHeight = 732
+  ClientWidth = 1248
+  DesignTimePPI = 120
   OnCreate = FormCreate
-  LCLVersion = '2.2.0.1'
+  LCLVersion = '2.2.2.0'
   object imgSrc: TImage
-    Left = 192
+    Left = 240
     Height = 250
-    Top = 19
+    Top = 24
     Width = 250
   end
   object imgSrcLabel: TLabel
-    Left = 13
-    Height = 30
-    Top = 45
-    Width = 134
+    Left = 16
+    Height = 38
+    Top = 56
+    Width = 169
     Caption = 'Image Source'
     Font.CharSet = ANSI_CHARSET
-    Font.Height = -22
+    Font.Height = -28
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    ParentColor = False
     ParentFont = False
   end
   object btnUpload: TButton
-    Left = 19
-    Height = 25
-    Top = 90
-    Width = 75
+    Left = 24
+    Height = 31
+    Top = 112
+    Width = 94
     Caption = 'Upload'
     OnClick = btnUploadClick
     TabOrder = 0
   end
   object imgMod: TImage
-    Left = 192
-    Height = 250
-    Top = 304
-    Width = 250
+    Left = 240
+    Height = 312
+    Top = 380
+    Width = 312
   end
   object imgModLabel: TLabel
-    Left = 13
-    Height = 30
-    Top = 328
-    Width = 155
+    Left = 16
+    Height = 38
+    Top = 410
+    Width = 195
     Caption = 'Image Modified'
     Font.CharSet = ANSI_CHARSET
-    Font.Height = -22
+    Font.Height = -28
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    ParentColor = False
     ParentFont = False
   end
   object btnGray: TButton
-    Left = 461
-    Height = 25
-    Top = 38
-    Width = 75
+    Left = 576
+    Height = 31
+    Top = 48
+    Width = 94
     Caption = 'Gray'
     OnClick = btnGrayClick
     TabOrder = 1
   end
   object btnBinary: TButton
-    Left = 461
-    Height = 25
-    Top = 83
-    Width = 75
+    Left = 576
+    Height = 31
+    Top = 104
+    Width = 94
     Caption = 'Binarization'
     OnClick = btnBinaryClick
     TabOrder = 2
   end
   object btnSmooth: TButton
-    Left = 461
-    Height = 25
-    Top = 128
-    Width = 75
+    Left = 576
+    Height = 31
+    Top = 160
+    Width = 94
     Caption = 'Smoothing'
     TabOrder = 3
   end
   object btnSharp: TButton
-    Left = 461
-    Height = 25
-    Top = 173
-    Width = 75
+    Left = 576
+    Height = 31
+    Top = 216
+    Width = 94
     Caption = 'Sharpening'
     TabOrder = 4
   end
   object btnSave: TButton
-    Left = 16
-    Height = 25
-    Top = 376
-    Width = 75
+    Left = 20
+    Height = 31
+    Top = 470
+    Width = 94
     Caption = 'Save'
     OnClick = btnSaveClick
     TabOrder = 5
   end
   object openDialog: TOpenDialog
-    Left = 32
-    Top = 480
+    Left = 40
+    Top = 600
   end
   object saveDialog: TSaveDialog
-    Left = 94
-    Top = 480
+    Left = 118
+    Top = 600
   end
 end
