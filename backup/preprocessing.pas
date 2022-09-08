@@ -27,6 +27,7 @@ type
     procedure btnBinaryClick(Sender: TObject);
     procedure btnGrayClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
+    procedure btnSharpClick(Sender: TObject);
     procedure btnSmoothClick(Sender: TObject);
     procedure btnUploadClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -51,6 +52,7 @@ var
   bmpR, bmpG, bmpB: array[0..1000, 0..1000] of byte;
   bmpBiner: array[0..1000, 0..1000] of boolean;
   hasilR, hasilG, hasilB    : array[0..1000, 0..1000] of integer;
+  filter : array[-1..1,-1..1] of real;
 
 procedure TForm1.btnSaveClick(Sender: TObject);
 begin
@@ -58,6 +60,75 @@ begin
   begin
     imgMod.Picture.SaveToFile(saveDialog.FileName);
   end;
+end;
+
+procedure TForm1.btnSharpClick(Sender: TObject);
+var
+   x, y : integer;
+   i, j :integer;
+   tempR, tempG, tempB : real;
+begin
+   for y:=-1 to 1 do
+   begin
+     for x := -1 to 1 do
+     begin
+       filter[x,y] := -1
+     end;
+   end;
+   filter[0,0] := 8;
+
+   for y := 0 to imgSrc.Height-1 do
+  begin
+    for x := 0 to imgSrc.Width-1 do
+    begin
+      tempR := 0;
+      tempG := 0;
+      tempB := 0;
+      for j := -1 to 1 do
+      begin
+        for i := -1 to 1 do
+        begin
+          tempR := tempR + filter[i,j] * bmpR[x-1,y-j];
+          tempG := tempG + filter[i,j] * bmpG[x-1,y-j];
+          tempB := tempB + filter[i,j] * bmpB[x-1,y-j];
+        end;
+      end;
+
+      hasilR[x,y] := round(tempR);
+      hasilG[x,y] := round(tempG);
+      hasilB[x,y] := round(tempB);
+
+      if hasilR[x,y] > 255 then
+         hasilR[x,y] := 255
+      else
+      if hasilR[x,y] < 0 then
+         hasilR[x,y] := 0;
+
+      if hasilG[x,y] > 255 then
+         hasilG[x,y] := 255
+      else
+      if hasilG[x,y] < 0 then
+         hasilG[x,y] := 0;
+
+      if hasilB[x,y] > 255 then
+         hasilB[x,y] := 255
+      else
+      if hasilB[x,y] < 0 then
+         hasilB[x,y] := 0;
+
+    end;
+  end;
+  imgMod.Height := imgSrc.Height;
+  imgMod.Width  := imgSrc.Width;
+
+  for y := 0 to imgMod.Height-1 do
+  begin
+    for x := 0 to imgMod.Width-1 do
+    begin
+      imgMod.Canvas.Pixels[x,y] := RGB(hasilR[x,y],hasilG[x,y],hasilB[x,y]);
+    end;
+  end;
+
 end;
 
 procedure TForm1.btnSmoothClick(Sender: TObject);
@@ -104,6 +175,16 @@ begin
       if hasilB[x,y] < 0 then
          hasilB[x,y] := 0;
 
+    end;
+  end;
+  imgMod.Height := imgSrc.Height;
+  imgMod.Width  := imgSrc.Width;
+
+  for y := 0 to imgMod.Height-1 do
+  begin
+    for x := 0 to imgMod.Width-1 do
+    begin
+      imgMod.Canvas.Pixels[x,y] := RGB(hasilR[x,y],hasilG[x,y],hasilB[x,y]);
     end;
   end;
 end;

@@ -90,6 +90,7 @@ object Form1: TForm1
     Top = 173
     Width = 75
     Caption = 'Sharpening'
+    OnClick = btnSharpClick
     ParentFont = False
     TabOrder = 4
   end
