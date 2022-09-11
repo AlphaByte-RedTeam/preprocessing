@@ -30,7 +30,7 @@ type
     procedure btnSharpClick(Sender: TObject);
     procedure btnSmoothClick(Sender: TObject);
     procedure btnUploadClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+
   private
 
   public
@@ -244,15 +244,14 @@ begin
         bmpR[x, y] := getRValue(imgSrc.Canvas.Pixels[x, y]);
         bmpG[x, y] := getGValue(imgSrc.Canvas.Pixels[x, y]);
         bmpB[x, y] := getBValue(imgSrc.Canvas.Pixels[x, y]);
+        bmpRR[x, y] := getRValue(imgSrc.Canvas.Pixels[x, y]);
+        bmpGG[x, y] := getGValue(imgSrc.Canvas.Pixels[x, y]);
+        bmpBB[x, y] := getBValue(imgSrc.Canvas.Pixels[x, y]);
       end;
     end;
   end;
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-
-end;
 
 end.
 

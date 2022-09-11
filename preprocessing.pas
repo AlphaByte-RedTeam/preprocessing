@@ -30,7 +30,6 @@ type
     procedure btnSharpClick(Sender: TObject);
     procedure btnSmoothClick(Sender: TObject);
     procedure btnUploadClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -250,11 +249,6 @@ begin
       end;
     end;
   end;
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-
 end;
 
 end.
