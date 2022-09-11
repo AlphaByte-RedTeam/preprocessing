@@ -285,8 +285,8 @@ var
   objek, latar : integer;
 begin
   //objek berwarna hitam
-  objek := 0;
-  latar := 1;
+  objek := 1;
+  latar := 0;
 
   for j := -1 to 1 do
   begin
