@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 230
+  Left = 199
   Height = 586
-  Top = 123
+  Top = 127
   Width = 998
   Caption = 'Form1'
   ClientHeight = 586
@@ -111,6 +111,14 @@ object Form1: TForm1
     Caption = 'Erosi'
     OnClick = btnErosiClick
     TabOrder = 6
+  end
+  object btnDilasi: TButton
+    Left = 584
+    Height = 25
+    Top = 83
+    Width = 75
+    Caption = 'Dilasi'
+    TabOrder = 7
   end
   object openDialog: TOpenDialog
     Left = 32

@@ -19,6 +19,7 @@ type
     btnGray: TButton;
     btnSave: TButton;
     btnErosi: TButton;
+    btnDilasi: TButton;
     imgSrc: TImage;
     imgMod: TImage;
     imgSrcLabel: TLabel;
