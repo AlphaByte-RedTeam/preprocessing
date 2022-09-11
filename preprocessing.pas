@@ -18,6 +18,8 @@ type
     btnUpload: TButton;
     btnGray: TButton;
     btnSave: TButton;
+    btnErosi: TButton;
+    btnDilasi: TButton;
     imgSrc: TImage;
     imgMod: TImage;
     imgSrcLabel: TLabel;
@@ -25,11 +27,13 @@ type
     openDialog: TOpenDialog;
     saveDialog: TSaveDialog;
     procedure btnBinaryClick(Sender: TObject);
+    procedure btnDilasiClick(Sender: TObject);
     procedure btnGrayClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure btnSharpClick(Sender: TObject);
     procedure btnSmoothClick(Sender: TObject);
     procedure btnUploadClick(Sender: TObject);
+    procedure btnErosiClick(Sender: TObject);
   private
 
   public
@@ -48,10 +52,10 @@ implementation
 uses Windows;
 
 var
-  bmpR, bmpG, bmpB, bmpRR, bmpGG, bmpBB: array[0..1000, 0..1000] of byte;
-  bmpBiner: array[0..1000, 0..1000] of boolean;
-  hasilR, hasilG, hasilB    : array[0..1000, 0..1000] of integer;
+  bmpR, bmpG, bmpB, bmpRR, bmpGG, bmpBB, bmpBiner: array[-1..1000, -1..1000] of integer;
+  hasilR, hasilG, hasilB, hasilBiner : array[0..1000, 0..1000] of integer;
   filter : array[-1..1,-1..1] of real;
+  SE : array [-1..1,-1..1] of Integer;
 
 procedure TForm1.btnSaveClick(Sender: TObject);
 begin
@@ -215,14 +219,88 @@ begin
       gray := (bmpR[x, y] + bmpG[x, y] + bmpB[x, y]) div 3;
       if (gray <= 127) then
       begin
-        bmpBiner[x,y] := False;
+        bmpBiner[x,y] := 0;
         imgMod.Canvas.Pixels[x, y] := RGB(0, 0, 0);
       end
 
       else
       begin
-        bmpBiner[x,y] := True;
+        bmpBiner[x,y] := 1;
         imgMod.Canvas.Pixels[x, y] := RGB(255, 255, 255);
+      end;
+    end;
+  end;
+end;
+
+procedure TForm1.btnDilasiClick(Sender: TObject);
+var
+  i, j, k, l  : integer;
+  temp : boolean;
+  objek, latar : integer;
+begin
+  //objek berwarna hitam
+  objek := 1;
+  latar := 0;
+
+  for j := -1 to 1 do
+  begin
+    for i := -1 to 1 do
+    begin
+      SE[i,j] := 1;
+    end;
+  end;
+
+  for j:=0 to imgSrc.Height-1 do
+  begin
+    for i:=0 to imgSrc.Width-1 do
+    begin
+          temp := True;
+          for l:=-1 to 1 do
+          begin
+            for k:=-1 to 1 do
+            begin
+              if (SE[k,l]>=0) then
+              begin
+                Temp := Temp AND (bmpBiner[i+k,j+l]=SE[k,l]);
+              end;
+            end;
+          end;
+          if temp then
+            hasilBiner[i,j] := objek
+          else
+            hasilBiner[i,j] := latar;
+          imgMod.Canvas.Pixels[i,j]:= RGB(hasilBiner[i,j]*255, hasilBiner[i,j]*255, hasilBiner[i,j]*255);
+          end;
+    end;
+
+  for j:=0 to imgSrc.Height-1 do
+  begin
+    for i:=0 to imgSrc.Width-1 do
+    begin
+      bmpBiner[i,j] := hasilBiner[i,j];
+      if j=0 then
+      begin
+        bmpR[i,-1] := bmpR[i,j];
+        bmpG[i,-1] := bmpG[i,j];
+        bmpB[i,-1] := bmpB[i,j];
+      end;
+      if j=imgSrc.Height-1 then
+      begin
+        bmpR[i,j+1] := bmpR[i,j];
+        bmpG[i,j+1] := bmpG[i,j];
+        bmpB[i,j+1] := bmpB[i,j];
+      end;
+      if i=0 then
+      begin
+        bmpR[-1,j] := bmpR[i,j];
+        bmpG[-1,j] := bmpG[i,j];
+        bmpB[-1,j] := bmpB[i,j];
+      end;
+      if i=imgSrc.Width-1 then
+      begin
+        bmpR[i+1,j] := bmpR[i,j];
+        bmpG[i+1,j] := bmpG[i,j];
+        bmpB[i+1,j] := bmpB[i,j];
       end;
     end;
   end;
@@ -230,22 +308,121 @@ end;
 
 procedure TForm1.btnUploadClick(Sender: TObject);
 var
-  x, y: integer;
+  i, j: integer;
 begin
   if (openDialog.Execute) then
   begin
     imgSrc.Picture.LoadFromFile(openDialog.FileName);
     imgMod.Picture.LoadFromFile(openDialog.FileName);
-    for y:=0 to imgSrc.Height-1 do
+    for j:=0 to imgSrc.Height-1 do
     begin
-      for x:=0 to imgSrc.Width-1 do
+      for i:=0 to imgSrc.Width-1 do
       begin
-        bmpR[x, y] := getRValue(imgSrc.Canvas.Pixels[x, y]);
-        bmpG[x, y] := getGValue(imgSrc.Canvas.Pixels[x, y]);
-        bmpB[x, y] := getBValue(imgSrc.Canvas.Pixels[x, y]);
-        bmpRR[x, y] := getRValue(imgSrc.Canvas.Pixels[x, y]);
-        bmpGG[x, y] := getGValue(imgSrc.Canvas.Pixels[x, y]);
-        bmpBB[x, y] := getBValue(imgSrc.Canvas.Pixels[x, y]);
+        bmpR[i,j] := getRValue(imgSrc.Canvas.Pixels[i,j]);
+        bmpG[i,j] := getGValue(imgSrc.Canvas.Pixels[i,j]);
+        bmpB[i,j] := getBValue(imgSrc.Canvas.Pixels[i,j]);
+        bmpRR[i,j] := getRValue(imgSrc.Canvas.Pixels[i,j]);
+        bmpGG[i,j] := getGValue(imgSrc.Canvas.Pixels[i,j]);
+        bmpBB[i,j] := getBValue(imgSrc.Canvas.Pixels[i,j]);
+
+        if j=0 then
+        begin
+          bmpR[i,-1] := bmpR[i,j];
+          bmpG[i,-1] := bmpG[i,j];
+          bmpB[i,-1] := bmpB[i,j];
+        end;
+        if j=imgSrc.Height-1 then
+        begin
+          bmpR[i,j+1] := bmpR[i,j];
+          bmpG[i,j+1] := bmpG[i,j];
+          bmpB[i,j+1] := bmpB[i,j];
+        end;
+        if i=0 then
+        begin
+          bmpR[-1,j] := bmpR[i,j];
+          bmpG[-1,j] := bmpG[i,j];
+          bmpB[-1,j] := bmpB[i,j];
+        end;
+        if i=imgSrc.Width-1 then
+        begin
+          bmpR[i+1,j] := bmpR[i,j];
+          bmpG[i+1,j] := bmpG[i,j];
+          bmpB[i+1,j] := bmpB[i,j];
+        end;
+      end;
+    end;
+  end;
+end;
+
+procedure TForm1.btnErosiClick(Sender: TObject);
+var
+  i, j, k, l  : integer;
+  temp : boolean;
+  objek, latar : integer;
+begin
+  //objek berwarna hitam
+  objek := 1;
+  latar := 0;
+
+  for j := -1 to 1 do
+  begin
+    for i := -1 to 1 do
+    begin
+      SE[i,j] := 1;
+    end;
+  end;
+
+  for j:=0 to imgSrc.Height-1 do
+  begin
+    for i:=0 to imgSrc.Width-1 do
+    begin
+          temp := False;
+          for l:=-1 to 1 do
+          begin
+            for k:=-1 to 1 do
+            begin
+              if (SE[k,l]>=0) then
+              begin
+                Temp := Temp OR (bmpBiner[i+k,j+l]=SE[k,l]);
+              end;
+            end;
+          end;
+          if temp then
+            hasilBiner[i,j] := objek
+          else
+            hasilBiner[i,j] := latar;
+          imgMod.Canvas.Pixels[i,j]:= RGB(hasilBiner[i,j]*255, hasilBiner[i,j]*255, hasilBiner[i,j]*255);
+          end;
+    end;
+
+  for j:=0 to imgSrc.Height-1 do
+  begin
+    for i:=0 to imgSrc.Width-1 do
+    begin
+      bmpBiner[i,j] := hasilBiner[i,j];
+      if j=0 then
+      begin
+        bmpR[i,-1] := bmpR[i,j];
+        bmpG[i,-1] := bmpG[i,j];
+        bmpB[i,-1] := bmpB[i,j];
+      end;
+      if j=imgSrc.Height-1 then
+      begin
+        bmpR[i,j+1] := bmpR[i,j];
+        bmpG[i,j+1] := bmpG[i,j];
+        bmpB[i,j+1] := bmpB[i,j];
+      end;
+      if i=0 then
+      begin
+        bmpR[-1,j] := bmpR[i,j];
+        bmpG[-1,j] := bmpG[i,j];
+        bmpB[-1,j] := bmpB[i,j];
+      end;
+      if i=imgSrc.Width-1 then
+      begin
+        bmpR[i+1,j] := bmpR[i,j];
+        bmpG[i+1,j] := bmpG[i,j];
+        bmpB[i+1,j] := bmpB[i,j];
       end;
     end;
   end;

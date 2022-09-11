@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="preprocessing.pas"/>
@@ -21,14 +21,23 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="206"/>
-        <CursorPos X="23" Y="213"/>
-        <UsageCount Value="22"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="231"/>
+        <CursorPos X="33" Y="264"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\Downloads\semester 3\P. Citra Digital\erosi,dilasi\utama.pas"/>
+        <UnitName Value="Utama"/>
+        <TopLine Value="121"/>
+        <CursorPos X="7" Y="242"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="7">
+    <JumpHistory HistoryIndex="18">
       <Position>
         <Filename Value="preprocessing.pas"/>
         <Caret Line="69" Column="36" TopLine="62"/>
@@ -60,6 +69,49 @@
       <Position>
         <Filename Value="preprocessing.pas"/>
         <Caret Line="196" Column="3" TopLine="191"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="213" Column="23" TopLine="206"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="215" Column="23" TopLine="208"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="277" Column="23" TopLine="252"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="296" Column="9" TopLine="266"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="317" Column="26" TopLine="298"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="297" Column="3" TopLine="268"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="273" Column="27" TopLine="244"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="256" Column="21" TopLine="241"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="244" Column="12" TopLine="226"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
+        <Caret Line="251" Column="57" TopLine="227"/>
+      </Position>
+      <Position>
+        <Filename Value="preprocessing.pas"/>
       </Position>
     </JumpHistory>
     <RunParams>
