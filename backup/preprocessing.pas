@@ -49,7 +49,7 @@ implementation
 uses Windows;
 
 var
-  bmpR, bmpG, bmpB: array[0..1000, 0..1000] of byte;
+  bmpR, bmpG, bmpB, bmpRR, bmpGG, bmpBB: array[0..1000, 0..1000] of byte;
   bmpBiner: array[0..1000, 0..1000] of boolean;
   hasilR, hasilG, hasilB    : array[0..1000, 0..1000] of integer;
   filter : array[-1..1,-1..1] of real;
@@ -75,7 +75,7 @@ begin
        filter[x,y] := -1
      end;
    end;
-   filter[0,0] := 8;
+   filter[0,0] := 9;
 
    for y := 0 to imgSrc.Height-1 do
   begin
@@ -236,6 +236,7 @@ begin
   if (openDialog.Execute) then
   begin
     imgSrc.Picture.LoadFromFile(openDialog.FileName);
+    imgMod.Picture.LoadFromFile(openDialog.FileName);
     for y:=0 to imgSrc.Height-1 do
     begin
       for x:=0 to imgSrc.Width-1 do
