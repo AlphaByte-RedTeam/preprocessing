@@ -76,9 +76,9 @@ begin
    end;
    filter[0,0] := 9;
 
-   for y := 0 to imgSrc.Height-1 do
-  begin
-    for x := 0 to imgSrc.Width-1 do
+   for y := 0 to imgMod.Height-1 do
+   begin
+    for x := 0 to imgMod.Width-1 do
     begin
       tempR := 0;
       tempG := 0;
@@ -135,9 +135,9 @@ var
   x, y, i, j :integer;
   tempR, tempG, tempB : real;
 begin
-   for y := 0 to imgSrc.Height-1 do
+   for y := 0 to imgMod.Height-1 do
   begin
-    for x := 0 to imgSrc.Width-1 do
+    for x := 0 to imgMod.Width-1 do
     begin
       tempR := 0;
       tempG := 0;
@@ -193,9 +193,9 @@ var
   x, y: integer;
   gray: byte;
 begin
-  for y:=0 to imgSrc.Height-1 do
+  for y:=0 to imgMod.Height-1 do
   begin
-    for x:=0 to imgSrc.Width-1 do
+    for x:=0 to imgMod.Width-1 do
     begin
       gray := (bmpR[x, y] + bmpG[x, y] + bmpB[x, y]) div 3;
       imgMod.Canvas.Pixels[x, y] := RGB(gray, gray, gray);
@@ -208,9 +208,9 @@ var
   x, y : integer;
   gray : byte;
 begin
-  for y:=0 to imgSrc.Height-1 do
+  for y:=0 to imgMod.Height-1 do
   begin
-    for x:=0 to imgSrc.Width-1 do
+    for x:=0 to imgMod.Width-1 do
     begin
       gray := (bmpR[x, y] + bmpG[x, y] + bmpB[x, y]) div 3;
       if (gray <= 127) then

@@ -30,7 +30,6 @@ type
     procedure btnSharpClick(Sender: TObject);
     procedure btnSmoothClick(Sender: TObject);
     procedure btnUploadClick(Sender: TObject);
-
   private
 
   public
@@ -77,9 +76,9 @@ begin
    end;
    filter[0,0] := 9;
 
-   for y := 0 to imgSrc.Height-1 do
+   for y := 0 to imgMod.Height-1 do
   begin
-    for x := 0 to imgSrc.Width-1 do
+    for x := 0 to imgMod.Width-1 do
     begin
       tempR := 0;
       tempG := 0;
@@ -136,9 +135,9 @@ var
   x, y, i, j :integer;
   tempR, tempG, tempB : real;
 begin
-   for y := 0 to imgSrc.Height-1 do
+   for y := 0 to imgMod.Height-1 do
   begin
-    for x := 0 to imgSrc.Width-1 do
+    for x := 0 to imgMod.Width-1 do
     begin
       tempR := 0;
       tempG := 0;
@@ -251,7 +250,6 @@ begin
     end;
   end;
 end;
-
 
 end.
 
